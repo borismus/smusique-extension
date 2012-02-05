@@ -1,0 +1,26 @@
+{
+  "name": "smusique uploader",
+  "version": "0.1",
+  "description": "Scrapes tabs/chords from Ultimate Guitar and PDFs from IMSLP, and uploads them to smusique.com",
+
+  "icons": {
+    "128": "icon.png",
+    "48": "icon.png",
+    "16": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://tabs.ultimate-guitar.com/*"],
+      "js": ["ug.js"],
+      "css": ["ug.css"]
+    },
+    {
+      "matches": ["http://imslp.org/wiki/*"],
+      "js": ["imslp.js"],
+      "css": ["imslp.css"]
+    }
+  ],
+  "permissions": [
+    "http://smusique-uploader.appspot.com/"
+  ]
+}
